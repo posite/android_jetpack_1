@@ -24,7 +24,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.wordData.observe(this, Observer {
-            binding.resultText.text = it
+//            binding.resultText.text = it
+            val frag = BlankFragment(it)
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(binding.fragmentFrame.id, frag)
+                .addToBackStack(null)
+                .commit()
             binding.inputWord.setText("")
         })
     }
