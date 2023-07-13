@@ -12,7 +12,7 @@ class SecondWorkManager (context: Context, workP: WorkerParameters): Worker(cont
         val a = inputData.getInt("a", 1)
         val b = inputData.getInt("b", 2)
 
-        Log.d("numbers", "a: $a  b: $b")
+        Log.d("SecondWorkManager", "a: $a  b: $b")
 
         val outPut: Data = workDataOf("result" to (a+b))
         return Result.success(outPut)

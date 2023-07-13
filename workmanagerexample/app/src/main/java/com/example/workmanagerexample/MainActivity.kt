@@ -14,14 +14,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val workerManager = OneTimeWorkRequestBuilder<MyWorkManager>().build()
-//        WorkManager.getInstance(this).enqueue(workerManager)
         val newData : Data = workDataOf(
             "a" to 100,
             "b" to 200
         )
+        val workerManager = OneTimeWorkRequestBuilder<MyWorkManager>().build()
         val secondWorkManager = OneTimeWorkRequestBuilder<SecondWorkManager>().setInputData(newData).build()
-        WorkManager.getInstance(this).enqueue(secondWorkManager)
+        val lastWorkManager = OneTimeWorkRequestBuilder<LastWorkManager>().build()
+
+//        WorkManager.getInstance(this).enqueue(workerManager)
+//        WorkManager.getInstance(this).enqueue(secondWorkManager)
+//        WorkManager.getInstance(this).enqueue(lastWorkManager)
+        WorkManager.getInstance(this)
+            .beginWith(listOf(workerManager, secondWorkManager))
+            .then(lastWorkManager)
+            .enqueue()
 
         WorkManager.getInstance(this).getWorkInfoByIdLiveData(secondWorkManager.id)
             .observe(this, Observer {
