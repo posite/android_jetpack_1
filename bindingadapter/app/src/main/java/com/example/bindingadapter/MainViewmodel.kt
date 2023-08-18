@@ -29,6 +29,9 @@ class MainViewmodel : ViewModel() {
 
     fun plusPoint() {
         _point.value = _point.value?.plus(5)
+        if(_point.value!! >= 100) {
+            _point.value = 0
+        }
     }
 }
 

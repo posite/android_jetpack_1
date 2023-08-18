@@ -36,5 +36,13 @@
             android:onClick="@{()->vm.plusPoint()}"
             android:text="+"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="@{vm.point.toString()}"/>
+
     </LinearLayout>
 </layout>
