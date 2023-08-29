@@ -10,9 +10,6 @@ import androidx.navigation.Navigation
 
 
 class BlankFragmentA : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +21,8 @@ class BlankFragmentA : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val bundle = Bundle()
-        bundle.putString("key", "value")
+//        val bundle = Bundle()
+//        bundle.putString("key", "value")
 
         val action = BlankFragmentADirections.actionBlankFragmentAToBlankFragmentB("make")
 
@@ -36,6 +33,4 @@ class BlankFragmentA : Fragment() {
         }
         return views
     }
-
-
 }

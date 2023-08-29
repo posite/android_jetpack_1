@@ -23,11 +23,12 @@ class MainActivity : AppCompatActivity() {
 
 //        val coroutineM = OneTimeWorkRequestBuilder<CoroutineWork>().build()
 //        WorkManager.getInstance(this).enqueue(coroutineM)
-//        val testWorkManager = OneTimeWorkRequestBuilder<TestWorkManager>().build()
-//        WorkManager.getInstance(this).enqueue(testWorkManager)
+        val testWorkManager = OneTimeWorkRequestBuilder<TestWorkManager>().build()
+        WorkManager.getInstance(this).enqueue(testWorkManager)
+
 //        WorkManager.getInstance(this)
 //            .getWorkInfoByIdLiveData(testWorkManager.id)
-//            .observe(this, Observer{it: WorkInfo?->
+//            .observe(this, Observer{
 //                val progress = it?.progress
 //                val value = progress?.getInt(HowMuch, 0)
 //                if(value != 0) {

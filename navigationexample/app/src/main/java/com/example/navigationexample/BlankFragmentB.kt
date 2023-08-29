@@ -27,6 +27,4 @@ class BlankFragmentB : Fragment() {
         Log.d("key", "value: ${args.key}")
         return views
     }
-
-
 }

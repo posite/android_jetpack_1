@@ -27,7 +27,11 @@
         <action
             android:id="@+id/action_blankFragmentB_to_blankFragmentC"
             app:destination="@id/blankFragmentC"
-            app:popUpTo="@id/blankFragmentA" />
+            app:popUpTo="@id/blankFragmentA"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
         <argument
             android:name="key"
             app:argType="string"
@@ -37,5 +41,12 @@
         android:id="@+id/blankFragmentC"
         android:name="com.example.navigationexample.BlankFragmentC"
         android:label="fragment_blank_c"
-        tools:layout="@layout/fragment_blank_c" />
+        tools:layout="@layout/fragment_blank_c" >
+        <action
+            android:id="@+id/action_blankFragmentC_to_blankFragmentA"
+            app:destination="@id/blankFragmentA"
+            app:popUpTo="@id/blankFragmentA"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
 </navigation>
